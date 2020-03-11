@@ -14,6 +14,9 @@ link: https://leetcode-cn.com/problems/intersection-of-two-arrays-ii/
 进阶:
 
 如果给定的数组已经排好序呢？你将如何优化你的算法？
+思考：我看到其他答案里有的写法用到了sort()方法，而且用的时间很短，
+     但是不确定在无序未知长度的数组中，sort()依然能保持高效性，并比普通的遍历更快
+     这个等以后了解了python的sort原理后再来补充
 
 如果 nums1 的大小比 nums2 小很多，哪种方法更优？
 
