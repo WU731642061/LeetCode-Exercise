@@ -28,65 +28,23 @@ def intersect(nums1, nums2):
     """
     第一种思考思路是先比对两个数组的长度，只需要遍历长度较短的数组即可
     遍历较短的数组的每一个元素，如果该元素同时也存在于另一个数组中，即为两者的交集，在较长的数组中删除该元素，并继续遍历
-    优化：可以和之前code_217的方法一样，从双端开始遍历，能够减少一般的循环事件，但测试出来使用的内存大小和时间差不多，不知道问题出在哪里
     """
     nums = []
     l1 = len(nums1)
     l2 = len(nums2)
-    start = 0
-    end = None
-
     if l1 == 0 or l2 == 0:
         return nums
     if l1 <= l2:
-        end = l1 - 1
-        while start <= end:
-            if nums1[start] in nums2:
-                nums.append(nums1[start])
-                nums2.remove(nums1[start])
-            if start == end:
-                start += 1
-                end -= 1
-                continue
-            if nums1[end] in nums2:
-                nums.append(nums1[end])
-                nums2.remove(nums1[end])
-            start += 1
-            end -= 1
+        for i in range(0, l1):
+            if nums1[i] in nums2:
+                nums.append(nums1[i])
+                nums2.remove(nums1[i])
     else:
-        end = l2 - 1
-        while start <= end:
-            if nums2[start] in nums1:
-                nums.append(nums2[start])
-                nums1.remove(nums2[start])
-            if start == end:
-                start += 1
-                end -= 1
-                continue
-            if nums2[end] in nums1:
-                nums.append(nums2[end])
-                nums1.remove(nums2[end])
-            start += 1
-            end -= 1
+        for i in range(0, l2):
+            if nums2[i] in nums1:
+                nums.append(nums2[i])
+                nums1.remove(nums2[i])
     return nums
-
-    # 没有用双端遍历的代码
-    # nums = []
-    # l1 = len(nums1)
-    # l2 = len(nums2)
-    # if l1 == 0 or l2 == 0:
-    #     return nums
-    # if l1 <= l2:
-    #     for i in range(0, l1):
-    #         if nums1[i] in nums2:
-    #             nums.append(nums1[i])
-    #             nums2.remove(nums1[i])
-    # else:
-    #     for i in range(0, l2):
-    #         if nums2[i] in nums1:
-    #             nums.append(nums2[i])
-    #             nums1.remove(nums2[i])
-    # return nums
 
 def intersect2(nums1, nums2):
     """
