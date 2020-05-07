@@ -34,5 +34,21 @@ def countAndSay(n):
   start = '11'
 
   for i in range(3,n+1):
-    tmp = '' # 暂时保存n下的结果
+    tmp = '' # 暂时保存第n次的结果
     index = 0  # 从第一位开始遍历
+    # 从字符串最后一位遍历到第二位
+    for j in range(len(start)-1, 0, -1):
+      if start[j] == start[j-1]:
+        index += 1
+      else:
+        index += 1
+        tmp = str(index) + start[j] + tmp
+        index = 0
+      # 特殊处理，当j==1时，我们需要处理字符串第一位
+      if j == 1:
+        index +=1
+        tmp = str(index) + start[j-1] + tmp
+    start = tmp
+  return tmp 
+  
+# 我看最快的那种写法，是将tmp作为[]，这样处理的速度比拼接字符串更加快，这里我就不再写一种了，毕竟两者的主要思路是一样的
