@@ -29,3 +29,4 @@ def isPalindrome2(s):
   """
   tmp = re.sub(r"[^A-Za-z0-9]","", s).lower()
   return tmp == tmp[::-1]
+  
