@@ -37,7 +37,7 @@ def hasCycle2(head: ListNode) -> bool:
   第二种解法我思考了挺久的，因为这是一个薛定谔的环，也就是说，你不知道他是否是一个环
   如果不是一个环，那么last.next一定为None，得到这个结果就比较好写
   如果是一个环，你不知道它的末尾在哪里，你也不知道环的起点是哪里
-  但是有一点可以证明的是，如果存在一个环，在环上的两个点，以不同速度前进，迟早会重合
+  但是有一点可以证明的是，如果存在一个环，在环上的两个指针，以不同速度前进，迟早会重合
   我们可以设置两个变量，以不同的速度得到next和next.next值，如果重合了，说明是一个环
   """
   if not head:
@@ -51,7 +51,3 @@ def hasCycle2(head: ListNode) -> bool:
       after = after.next.next
     except:
       return False
-
-
-
-
