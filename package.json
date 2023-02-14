@@ -1,0 +1,19 @@
+{
+  "name": "leetcode-exercise",
+  "version": "1.0.0",
+  "description": "每日上传1题",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WU731642061/LeetCode-Exercise.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WU731642061/LeetCode-Exercise/issues"
+  },
+  "homepage": "https://github.com/WU731642061/LeetCode-Exercise#readme"
+}
